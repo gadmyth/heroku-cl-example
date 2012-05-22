@@ -26,10 +26,10 @@ TODO: cleanup code."
   (cl-who:with-html-output-to-string (s)
     (:html
      (:head
-      (:title "雷哥工作室"))
+      (:title "Workspace of Gadmyth"))
      (:body
-      (:h1 "欢迎来到雷哥工作室！！")
-      (:h3 "工作室配置：")
+      (:h1 "Welcome to my workspace!")
+      (:h3 "Environment of workspace：")
       (:ul
        (:li (format s "~A ~A" (lisp-implementation-type) (lisp-implementation-version)))
        (:li (format s "Hunchentoot ~A" hunchentoot::*hunchentoot-version*))
