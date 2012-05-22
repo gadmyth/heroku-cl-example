@@ -26,10 +26,10 @@ TODO: cleanup code."
   (cl-who:with-html-output-to-string (s)
     (:html
      (:head
-      (:title "Heroku CL Example App"))
+      (:title "雷哥工作室"))
      (:body
-      (:h1 "Heroku CL Example App")
-      (:h3 "Using")
+      (:h1 "欢迎来到雷哥工作室！！")
+      (:h3 "工作室配置：")
       (:ul
        (:li (format s "~A ~A" (lisp-implementation-type) (lisp-implementation-version)))
        (:li (format s "Hunchentoot ~A" hunchentoot::*hunchentoot-version*))
@@ -38,9 +38,9 @@ TODO: cleanup code."
        (:a :href "static/lisp-glossy.jpg" (:img :src "static/lisp-glossy.jpg" :width 100)))
       (:div
        (:a :href "static/hello.txt" "hello"))
-      (:h3 "App Database")
-      (:div
-       (:pre "SELECT version();"))
+      ;;(:h3 "App Database")
+      ;;(:div
+       ;;(:pre "SELECT version();"))
       ;;(:div (format s "~A" (postmodern:with-connection (db-params)
 	;;		     (postmodern:query "select version()"))))
       ))))
