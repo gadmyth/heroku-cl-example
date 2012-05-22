@@ -41,5 +41,6 @@ TODO: cleanup code."
       (:h3 "App Database")
       (:div
        (:pre "SELECT version();"))
-      (:div (format s "~A" (postmodern:with-connection (db-params)
-			     (postmodern:query "select version()"))))))))
+      ;;(:div (format s "~A" (postmodern:with-connection (db-params)
+	;;		     (postmodern:query "select version()"))))
+      ))))
