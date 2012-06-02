@@ -22,7 +22,7 @@ TODO: cleanup code."
 (push (hunchentoot:create-folder-dispatcher-and-handler "/static/" "/app/public/")
 	 hunchentoot:*dispatch-table*)
 
-(push (hunchentoot:create-static-file-dispatcher-and-handler "/cydia/" "/app/public/cydia/")
+(push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/" "/app/public/cydia/")
 	 hunchentoot:*dispatch-table*)
 
 
@@ -30,7 +30,7 @@ TODO: cleanup code."
   (cl-who:with-html-output-to-string (s)
     (:html
      (:head
-       (:link :rel "shortcut icon" :href "static/favicon.ico" :type "image/x-icon")
+       (:link :rel "shortcut icon" :href "cydia/favicon.ico" :type "image/x-icon")
        (:title "Workspace of Gadmyth"))
      (:body
       (:h1 "Welcome to my workspace!")
