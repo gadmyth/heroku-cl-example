@@ -25,17 +25,6 @@ TODO: cleanup code."
 (push (hunchentoot:create-static-file-dispatcher-and-handler "/cydia/" "/app/public/cydia/")
 	 hunchentoot:*dispatch-table*)
 
-(hunchentoot:define-easy-handler (cydia-source :uri "/cydia") ()
-  (cl-who:with-html-output-to-string (s)
-    (:html
-     (:head
-      (:link :rel "shortcut icon" :href "static/favicon.ico" :type "image/x-icon")
-      (:title "Cydia Source"))
-     (:body
-      (:div
-       (:a :href "cydia/tpime/TouchPalIME.deb" "TouchPal IME For IOS v2.2.1"))
-      ))))
-
 (hunchentoot:define-easy-handler (hello-sbcl :uri "/") ()
   (cl-who:with-html-output-to-string (s)
     (:html
