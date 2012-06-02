@@ -29,7 +29,8 @@ TODO: cleanup code."
   (cl-who:with-html-output-to-string (s)
     (:html
      (:head
-      (:title "Workspace of Gadmyth"))
+       (:link :rel "shortcut icon" :href "static/favicon.ico" :type "image/x-icon")
+       (:title "Workspace of Gadmyth"))
      (:body
       (:h1 "Welcome to my workspace!")
       (:h3 "Environment of workspace：")
