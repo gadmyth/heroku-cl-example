@@ -22,14 +22,17 @@ TODO: cleanup code."
 (push (hunchentoot:create-folder-dispatcher-and-handler "/static/" "/app/public/")
 	 hunchentoot:*dispatch-table*)
 
-(push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/" "/app/public/cydia/")
+(push (hunchentoot:create-static-file-dispatcher-and-handler "/cydia/" "/app/public/cydia/")
+	 hunchentoot:*dispatch-table*)
+
+(push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/favion.ico" "/app/public/favicon.ico")
 	 hunchentoot:*dispatch-table*)
 
 (hunchentoot:define-easy-handler (cydia-source :uri "/cydia") ()
   (cl-who:with-html-output-to-string (s)
     (:html
      (:head
-      (:link :rel "shortcut icon" :href "static/favicon.ico" :type "image/x-icon")
+      (:link :rel "shortcut icon" :href "cydia/favicon.ico" :type "image/x-icon")
       (:title "Cydia Source"))
      (:body
       (:div
