@@ -25,6 +25,7 @@ TODO: cleanup code."
 (push (hunchentoot:create-static-file-dispatcher-and-handler "/cydia/" "/app/public/cydia/")
 	 hunchentoot:*dispatch-table*)
 
+
 (hunchentoot:define-easy-handler (hello-sbcl :uri "/") ()
   (cl-who:with-html-output-to-string (s)
     (:html
