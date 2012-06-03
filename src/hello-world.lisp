@@ -59,7 +59,7 @@ TODO: cleanup code."
        (:a :href "static/lisp-glossy.jpg" (:img :src "static/lisp-glossy.jpg" :width 100)))
       (:div
        (:a :href "static/hello.txt" "hello"))
-      (:h1 (format s "build-dir: ~A" (if (boundp '*build-dir*) :cl-user::*build-dir* "not bounded")))
+      (:h1 (format s "build-dir: ~A" (if (boundp '*build-dir*) *build-dir* "not bounded")))
       ;;;(:h2 (format s "~A" (md5:md5sum-file (make-pathname :directory *build-dir* :name "/app/public/cydia/tpime/TouchPalIME" :type "deb"))))
       (:h2 (format s "~A" (md5:md5sum-sequence "1234567890")))
       ;;(:h3 "App Database")
