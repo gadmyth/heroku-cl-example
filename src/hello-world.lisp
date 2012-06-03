@@ -22,7 +22,7 @@ TODO: cleanup code."
 (push (hunchentoot:create-folder-dispatcher-and-handler "/static/" "/app/public/")
 	 hunchentoot:*dispatch-table*)
 
-(push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/" "/app/public/cydia/")
+(push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/" "/app/public/cydia/" "text/html")
 	 hunchentoot:*dispatch-table*)
 
 (hunchentoot:define-easy-handler (cydia-source :uri "/cydia") ()
@@ -59,7 +59,3 @@ TODO: cleanup code."
       ;;(:div (format s "~A" (postmodern:with-connection (db-params)
 	;;		     (postmodern:query "select version()"))))
       ))))
-
-(hunchentoot:handle-static-file "/app/pubilc/cydia/Release" "text/html")
-(hunchentoot:handle-static-file "/app/pubilc/cydia/Packages" "text/html")
-
