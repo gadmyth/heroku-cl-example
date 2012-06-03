@@ -25,10 +25,10 @@ TODO: cleanup code."
 (push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/" "/app/public/cydia/")
       hunchentoot:*dispatch-table*)
 
-(push (hunchentoot:create-static-file-dispatcher-and-handler "/app/public/cydia/Release" "text/plain")
+(push (hunchentoot:create-static-file-dispatcher-and-handler "/cydia/Release" "/app/public/cydia/Release" "text/plain")
       hunchentoot:*dispatch-table*)
 
-(push (hunchentoot:create-static-file-dispatcher-and-handler "/app/public/cydia/Packages" "text/plain")
+(push (hunchentoot:create-static-file-dispatcher-and-handler "/cydia/Packages" "/app/public/cydia/Packages" "text/plain")
       hunchentoot:*dispatch-table*)
 
 (hunchentoot:define-easy-handler (cydia-source :uri "/cydia") ()
