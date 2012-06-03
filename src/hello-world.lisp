@@ -25,6 +25,9 @@ TODO: cleanup code."
 (push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/" "/app/public/cydia/")
 	 hunchentoot:*dispatch-table*)
 
+(hunchentoot:handle-static-file "/app/pubilc/cydia/Release" "txt/html")
+(hunchentoot:handle-static-file "/app/pubilc/cydia/Packages" "txt/html")
+
 (hunchentoot:define-easy-handler (cydia-source :uri "/cydia") ()
   (cl-who:with-html-output-to-string (s)
     (:html
