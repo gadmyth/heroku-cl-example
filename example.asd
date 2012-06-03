@@ -4,7 +4,7 @@
   :depends-on (#:hunchentoot
 	       #:cl-who
 	       #:postmodern
-	       #:md5-system
+	       #:md5
 	       )
   :components ((:file "package")
 	       (:module :src
