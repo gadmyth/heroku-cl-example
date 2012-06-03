@@ -20,16 +20,22 @@ TODO: cleanup code."
 
 ;; Handlers
 (push (hunchentoot:create-folder-dispatcher-and-handler "/static/" "/app/public/")
-	 hunchentoot:*dispatch-table*)
+      hunchentoot:*dispatch-table*)
 
-(push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/" "/app/public/cydia/" "text/html")
-	 hunchentoot:*dispatch-table*)
+(push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/" "/app/public/cydia/")
+      hunchentoot:*dispatch-table*)
+
+(push (hunchentoot:create-static-file-dispatcher-and-handler "/app/public/cydia/Release" "text/plain")
+      hunchentoot:*dispatch-table*)
+
+(push (hunchentoot:create-static-file-dispatcher-and-handler "/app/public/cydia/Packages" "text/plain")
+      hunchentoot:*dispatch-table*)
 
 (hunchentoot:define-easy-handler (cydia-source :uri "/cydia") ()
   (cl-who:with-html-output-to-string (s)
     (:html
      (:head
-       (:link :rel "shortcut icon" :href "cydia/favicon.ico" :type "image/x-icon")
+       (:link :rel "shortcut icon" :href "static/favicon.ico" :type "image/x-icon")
        (:title "Cydia Source"))
      (:body
       (:div
@@ -40,7 +46,7 @@ TODO: cleanup code."
   (cl-who:with-html-output-to-string (s)
     (:html
      (:head
-       (:link :rel "shortcut icon" :href "cydia/favicon.ico" :type "image/x-icon")
+       (:link :rel "shortcut icon" :href "static/favicon.ico" :type "image/x-icon")
        (:title "Workspace of Gadmyth"))
      (:body
       (:h1 "Welcome to my workspace!")
