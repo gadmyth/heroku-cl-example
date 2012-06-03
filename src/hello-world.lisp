@@ -41,8 +41,10 @@ TODO: cleanup code."
       (:h6 (format s "build-dir: ~A" (eval (find-symbol "*BUILD-DIR*" (find-package :cl-user)))))
       (:h6 (format s "~A" (md5:md5sum-file #p"./public/cydia/tpime/TouchPalIME.deb")))
       (:h6 (format s "~A" (md5:md5sum-sequence "1234567890")))
+      (:a :href "https://devcenter.heroku.com/articles/read-only-filesystem" "you can load file to #p\"./tmp\"")
       (:div
-       (:a :href "cydia/tpime/TouchPalIME.deb" "TouchPal IME for IOS 4,5 v2.2.1"))
+       	(:h5 (format s "The followings are app into hacked iphones:"))
+	(:a :href "cydia/tpime/TouchPalIME.deb" "TouchPal IME for IOS 4,5 v2.2.1"))
       ))))
 
 (hunchentoot:define-easy-handler (hello-sbcl :uri "/") ()
