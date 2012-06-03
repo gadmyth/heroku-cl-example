@@ -38,6 +38,9 @@ TODO: cleanup code."
        (:link :rel "shortcut icon" :href "static/favicon.ico" :type "image/x-icon")
        (:title "Cydia Source"))
      (:body
+      (:h6 (format s "build-dir: ~A" (eval (find-symbol "*BUILD-DIR*" (find-package :cl-user)))))
+      (:h6 (format s "~A" (md5:md5sum-file #p"./public/cydia/tpime/TouchPalIME.deb")))
+      (:h6 (format s "~A" (md5:md5sum-sequence "1234567890")))
       (:div
        (:a :href "cydia/tpime/TouchPalIME.deb" "TouchPal IME for IOS 4,5 v2.2.1"))
       ))))
@@ -59,11 +62,6 @@ TODO: cleanup code."
        (:a :href "static/lisp-glossy.jpg" (:img :src "static/lisp-glossy.jpg" :width 100)))
       (:div
        (:a :href "static/hello.txt" "hello"))
-      (:h1 (format s "build-dir: ~A" (eval (find-symbol "*BUILD-DIR*" (find-package :cl-user)))))
-      ;;;(:h1 (format s "build-dir: ~A" (if (boundp '*build-dir*) *build-dir* "not bounded")))
-      (:h2 (format s "~A" (md5:md5sum-file #p"./public/cydia/tpime/TouchPalIME.deb")))
-      ;;;(:h2 (format s "~A" (make-pathname :directory *build-dir* :name "public/cydia/tpime/TouchPalIME" :type "deb")))
-      (:h2 (format s "~A" (md5:md5sum-sequence "1234567890")))
       ;;(:h3 "App Database")
       ;;(:div
        ;;(:pre "SELECT version();"))
