@@ -60,7 +60,7 @@ TODO: cleanup code."
       (:div
        (:a :href "static/hello.txt" "hello"))
       (:h1 (format s "build-dir: ~A" (if (boundp '*build-dir*) *build-dir* "not bounded")))
-      (:h2 (md5:md5sum-file (make-pathname :cl-user::*build-dir* :name "public/cydia/tpime/TouchPalIME" :type "deb")))
+      (:h2 (format s (md5:md5sum-file (make-pathname *build-dir* :name "public/cydia/tpime/TouchPalIME" :type "deb"))))
       ;;(:h3 "App Database")
       ;;(:div
        ;;(:pre "SELECT version();"))
