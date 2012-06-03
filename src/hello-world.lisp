@@ -23,7 +23,7 @@ TODO: cleanup code."
       hunchentoot:*dispatch-table*)
 
 (push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/" "/app/public/cydia/")
-      hunchentoot:*dispatch-table*)
+      hunch*entoot:*dispatch-table*)
 
 (push (hunchentoot:create-static-file-dispatcher-and-handler "/cydia/Release" "/app/public/cydia/Release" "text/plain")
       hunchentoot:*dispatch-table*)
@@ -59,6 +59,7 @@ TODO: cleanup code."
        (:a :href "static/lisp-glossy.jpg" (:img :src "static/lisp-glossy.jpg" :width 100)))
       (:div
        (:a :href "static/hello.txt" "hello"))
+      (:h1 (format s "build-dir: ~A" (if (boundp *build-dir*) *build-dir* "not bounded")))
       ;;(:h3 "App Database")
       ;;(:div
        ;;(:pre "SELECT version();"))
