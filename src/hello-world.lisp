@@ -23,7 +23,7 @@ TODO: cleanup code."
       hunchentoot:*dispatch-table*)
 
 (push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/" "/app/public/cydia/")
-      hunch*entoot:*dispatch-table*)
+      hunchentoot:*dispatch-table*)
 
 (push (hunchentoot:create-static-file-dispatcher-and-handler "/cydia/Release" "/app/public/cydia/Release" "text/plain")
       hunchentoot:*dispatch-table*)
