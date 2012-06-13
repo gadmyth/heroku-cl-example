@@ -44,7 +44,7 @@ TODO: cleanup code."
       (:a :href "https://devcenter.heroku.com/articles/read-only-filesystem" "you can load file to #p\"./tmp\"")
       (:div
        	(:h5 (format s "The followings are app into hacked iphones:"))
-	(:a :href "cydia/tpime/TouchPalIME.deb" "TouchPal IME for IOS 4,5 v2.2.1"))
+	(:a :href "cydia/tpime/TouchPalIME.deb" "TouchPal IME for IOS 4,5 v2.3, beta, 2012.6.13"))
       ))))
 
 (hunchentoot:define-easy-handler (hello-sbcl :uri "/") ()
