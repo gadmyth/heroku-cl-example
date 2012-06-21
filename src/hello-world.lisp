@@ -45,7 +45,7 @@ TODO: cleanup code."
        (:title "Cydia Source"))
      (:body
       (:h6 (format s "build-dir: ~A" (eval (find-symbol "*BUILD-DIR*" (find-package :cl-user)))))
-      (:h6 (format s "~A" (md5:md5sum-file #p"./public/cydia/tpime/TouchPalIME.deb")))
+      (:h6 (format s "~A" (md5:md5sum-file #p"./public/cydia/tpime/v2.3/TouchPalIME.deb")))
       (:h6 (format s "~A" (md5:md5sum-sequence "1234567890")))
       (:a :href "https://devcenter.heroku.com/articles/read-only-filesystem" "you can load file to #p\"./tmp\"")
       (:div
