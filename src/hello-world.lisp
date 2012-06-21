@@ -51,6 +51,7 @@ TODO: cleanup code."
       (:div
        	(:h5 (format s "The followings are app into hacked iphones:"))
 	(:a :href "cydia/tpime/v2.2.2/TouchPalIME.deb" "TouchPal IME for IOS 4,5 v2.2.2, release, 2012.5.30")
+	(:p)
 	(:a :href "cydia/tpime/v2.3/TouchPalIME.deb" "TouchPal IME for IOS 4,5 v2.3, release, 2012.6.20"))
       ))))
 
