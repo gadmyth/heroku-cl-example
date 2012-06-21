@@ -25,6 +25,12 @@ TODO: cleanup code."
 (push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/" "/app/public/cydia/")
       hunchentoot:*dispatch-table*)
 
+(push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/tpime/v2.2.2/" "/app/public/cydia/tpime/v2.2.2/")
+      hunchentoot:*dispatch-table*)
+
+(push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/tpime/v2.3/" "/app/public/cydia/tpime/v2.3/")
+      hunchentoot:*dispatch-table*)
+
 (push (hunchentoot:create-static-file-dispatcher-and-handler "/cydia/Release" "/app/public/cydia/Release" "text/plain")
       hunchentoot:*dispatch-table*)
 
@@ -44,9 +50,7 @@ TODO: cleanup code."
       (:a :href "https://devcenter.heroku.com/articles/read-only-filesystem" "you can load file to #p\"./tmp\"")
       (:div
        	(:h5 (format s "The followings are app into hacked iphones:"))
-	(:a :href "cydia/tpime/v2.2.2/TouchPalIME.deb" "TouchPal IME for IOS 4,5 v2.2.2, release, 2012.5.30"))
-      (:div
-       	(:h5 (format s "The followings are app into hacked iphones:"))
+	(:a :href "cydia/tpime/v2.2.2/TouchPalIME.deb" "TouchPal IME for IOS 4,5 v2.2.2, release, 2012.5.30")
 	(:a :href "cydia/tpime/v2.3/TouchPalIME.deb" "TouchPal IME for IOS 4,5 v2.3, release, 2012.6.20"))
       ))))
 
