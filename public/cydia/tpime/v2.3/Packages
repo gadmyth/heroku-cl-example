@@ -3,7 +3,7 @@ Version: 2.3.23526
 Architecture: iphoneos-arm
 Maintainer: CooTek
 Depends: mobilesubstrate (>=0.9.3005-1), firmware (>= 4.0)
-Filename: TouchPalIME.deb
+Filename: ./TouchPalIME.deb
 Size: 10438246
 MD5sum: 23e0cf8a085cdf028654d1c2f033d685
 SHA1: 268c93fa2a855c8fbee1807843648326f79d9040
