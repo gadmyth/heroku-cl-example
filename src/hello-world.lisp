@@ -72,6 +72,8 @@ TODO: cleanup code."
        (:a :href "static/lisp-glossy.jpg" (:img :src "static/lisp-glossy.jpg" :width 100)))
       (:div
        (:a :href "static/hello.txt" "hello"))
+      (:div
+       (:h6 (format s "Parameter name: ~A" (parameter "name"))))
       ;;(:h3 "App Database")
       ;;(:div
        ;;(:pre "SELECT version();"))
