@@ -73,7 +73,9 @@ TODO: cleanup code."
       (:div
        (:a :href "static/hello.txt" "hello"))
       (:div
-       (:h6 (format s "Parameter name: ~A" (hunchentoot:parameter "name"))))
+       (let* ((number (hunchentoot:parameter "serial"))
+	      (xor-number (format nil "~A" (logxor #x10FE5A number))))
+	 (:h6 (format s "~A" (md5:md5sum-sequence xor-number)))))
       ;;(:h3 "App Database")
       ;;(:div
        ;;(:pre "SELECT version();"))
