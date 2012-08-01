@@ -73,7 +73,7 @@ TODO: cleanup code."
       (:div
        (:a :href "static/hello.txt" "hello"))
       (:div
-       (:h6 (format s "Parameter name: ~A" (parameter "name"))))
+       (:h6 (format s "Parameter name: ~A" (hunchentoot:parameter "name"))))
       ;;(:h3 "App Database")
       ;;(:div
        ;;(:pre "SELECT version();"))
