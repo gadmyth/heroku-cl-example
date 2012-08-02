@@ -37,6 +37,7 @@ TODO: cleanup code."
 (push (hunchentoot:create-static-file-dispatcher-and-handler "/cydia/Packages" "/app/public/cydia/Packages" "text/plain")
       hunchentoot:*dispatch-table*)
 
+
 (hunchentoot:define-easy-handler (cydia-source :uri "/cydia") ()
   (cl-who:with-html-output-to-string (s)
     (:html
@@ -56,6 +57,24 @@ TODO: cleanup code."
       ))))
 
 (defvar *register-table* (make-hash-table :test #'equal))
+(hunchentoot:define-easy-handler (software-register :uri "/soft-regist") ()
+  (cl-who:with-html-output-to-string (s)
+    (:html 
+     (:head
+      (:link :rel "shortcut icon" :href "static/favicon.ico" :type "image/x-icon")
+      (:title "Cydia Source"))
+     (:body
+      (:div
+       (:h6 (let* ((para (hunchentoot:parameter "serial"))
+		   (number (if para (format nil "~a" para) "0"))
+		   (xor-number (format nil "~x" (logxor #x10FE5A (parse-integer number :radix 16))))
+		   (serial-number (eval `(concatenate 'string ,@(map 'list (lambda (x) (format nil "~x" x)) (md5:md5sum-sequence xor-number))))))
+	      (if (and (not (equal "0" number)) (< (hash-table-count *register-table*) 5))
+		  (setf (gethash number *register-table*) serial-number))
+	      (format s "~A" serial-number))))
+      (:div
+       (:h6 (maphash (lambda (k v) (format s "~A, ~A~%" k v)) *register-table*)))
+      ))))
 
 (hunchentoot:define-easy-handler (hello-sbcl :uri "/") ()
   (cl-who:with-html-output-to-string (s)
@@ -74,16 +93,6 @@ TODO: cleanup code."
        (:a :href "static/lisp-glossy.jpg" (:img :src "static/lisp-glossy.jpg" :width 100)))
       (:div
        (:a :href "static/hello.txt" "hello"))
-      (:div
-       (:h6 (let* ((para (hunchentoot:parameter "serial"))
-		   (number (if para (format nil "~a" para) "0"))
-		   (xor-number (format nil "~x" (logxor #x10FE5A (parse-integer number :radix 16))))
-		   (serial-number (eval `(concatenate 'string ,@(map 'list (lambda (x) (format nil "~x" x)) (md5:md5sum-sequence xor-number))))))
-	      (if (and (not (equal "0" number)) (< (hash-table-count *register-table*) 5))
-		  (setf (gethash number *register-table*) serial-number))
-	      (format s "~A" serial-number))))
-      (:div
-       (:h6 (maphash (lambda (k v) (format s "~A, ~A~%" k v)) *register-table*)))
       ;;(:h3 "App Database")
       ;;(:div
        ;;(:pre "SELECT version();"))
