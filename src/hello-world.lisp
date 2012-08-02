@@ -58,7 +58,7 @@ TODO: cleanup code."
 
 (defvar *register-table* (make-hash-table :test #'equal))
 (hunchentoot:define-easy-handler (software-register :uri "/soft-regist") ()
-  (cl-who:with-html-output-to-string (s)
+  (cl-who:show-html-expansion (s)
     (:html 
      (:head
       (:link :rel "shortcut icon" :href "static/favicon.ico" :type "image/x-icon")
