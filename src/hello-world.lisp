@@ -78,7 +78,7 @@ TODO: cleanup code."
 
       (if (> (hash-table-count *register-table*) 0)
 	  (:div
-	   (maphash (lambda (k v) (:h6 (format s "~A, ~A~%" k v))) *register-table*)))
+	   (maphash (lambda (k v) (cl-who:htm (:h6 (format nil "~A, ~A~%" k v)))) *register-table*)))
       ))))
 
 (hunchentoot:define-easy-handler (hello-sbcl :uri "/") ()
