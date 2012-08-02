@@ -76,8 +76,9 @@ TODO: cleanup code."
 		(setf result (gethash number *register-table*))
 		(if result (format s "~A" serial-number))))))
 
-      (:div
-       (maphash (lambda (k v) (htm (:h6 (format nil "~A, ~A~%" k v)))) *register-table*)
+      (if (> (hash-table-count *register-table*) 0)
+	  (:div
+	   (maphash (lambda (k v) (:h6 (format s "~A, ~A~%" k v))) *register-table*)))
       ))))
 
 (hunchentoot:define-easy-handler (hello-sbcl :uri "/") ()
