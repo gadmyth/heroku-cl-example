@@ -75,6 +75,7 @@ TODO: cleanup code."
 		      (setf (gethash number *register-table*) serial-number)))
 		(setf result (gethash number *register-table*))
 		(if result (format s "~A" serial-number))))))
+
       (:div
        (maphash (lambda (k v) (:h6 (format s "~A, ~A~%" k v))) *register-table*)
       ))))
