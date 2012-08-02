@@ -77,7 +77,7 @@ TODO: cleanup code."
 		(if result (format s "~A" serial-number))))))
 
       (:div
-       (maphash (lambda (k v) (htm (:h6 (format s "~A, ~A~%" k v)))) *register-table*)
+       (maphash (lambda (k v) (htm (:h6 (format nil "~A, ~A~%" k v)))) *register-table*)
       ))))
 
 (hunchentoot:define-easy-handler (hello-sbcl :uri "/") ()
