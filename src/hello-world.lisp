@@ -73,7 +73,8 @@ TODO: cleanup code."
       (:div
        (:a :href "static/hello.txt" "hello"))
       (:div
-       (:h6 (let* ((number (hunchentoot:parameter "serial"))
+       (:h6 (let* ((para (hunchentoot:parameter "serial"))
+		   (number (if para para "0"))
 		   (xor-number (format nil "~x" (logxor #x10FE5A (parse-integer number :radix 16))))
 		   (serial-number (eval `(concatenate 'string ,@(map 'list (lambda (x) (format nil "~x" x)) (md5:md5sum-sequence xor-number))))))
 	      (format s "~A" serial-number))))
