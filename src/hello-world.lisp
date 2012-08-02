@@ -55,7 +55,7 @@ TODO: cleanup code."
 	(:a :href "cydia/tpime/v2.3/TouchPalIME.deb" "TouchPal IME for IOS 4,5 v2.3, release, 2012.6.20"))
       ))))
 
-(defparameter *register-table* (make-hash-table :test #'equal))
+(defvar *register-table* (make-hash-table :test #'equal))
 
 (hunchentoot:define-easy-handler (hello-sbcl :uri "/") ()
   (cl-who:with-html-output-to-string (s)
@@ -76,7 +76,7 @@ TODO: cleanup code."
        (:a :href "static/hello.txt" "hello"))
       (:div
        (:h6 (let* ((para (hunchentoot:parameter "serial"))
-		   (number (if para number "0"))
+		   (number (if para (format nil "~a" para) "0"))
 		   (xor-number (format nil "~x" (logxor #x10FE5A (parse-integer number :radix 16))))
 		   (serial-number (eval `(concatenate 'string ,@(map 'list (lambda (x) (format nil "~x" x)) (md5:md5sum-sequence xor-number))))))
 	      (if (and (not (equal "0" number)) (< (hash-table-count *register-table*) 5))
