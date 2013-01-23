@@ -58,7 +58,7 @@ TODO: cleanup code."
 
 (defvar *register-table* (make-hash-table :test #'equal))
 (hunchentoot:define-easy-handler (software-register :uri "/soft-regist") ()
-  (cl-who:show-html-expansion (s)
+  (cl-who:with-html-output-to-string (s)
     (:html 
      (:head
       (:link :rel "shortcut icon" :href "static/favicon.ico" :type "image/x-icon")
@@ -76,9 +76,8 @@ TODO: cleanup code."
 		(setf result (gethash number *register-table*))
 		(if result (format s "~A" serial-number))))))
 
-      (if (> (hash-table-count *register-table*) 0)
-	  (:div
-	   (maphash (lambda (k v) (cl-who:htm (:h6 (format s "~A, ~A~%" k v)))) *register-table*)))
+      (:div
+       (:h6 (maphash (lambda (k v) (format s "~A, ~A~%" k v)) *register-table*)))
       ))))
 
 (hunchentoot:define-easy-handler (hello-sbcl :uri "/") ()
@@ -98,6 +97,8 @@ TODO: cleanup code."
        (:a :href "static/lisp-glossy.jpg" (:img :src "static/lisp-glossy.jpg" :width 100)))
       (:div
        (:a :href "static/hello.txt" "hello"))
+      (:div
+       (:a :href "static/Basic.Introduction.To.Lisp.ppt" "Basic Introduction to Lisp (ppt)"))
       ;;(:h3 "App Database")
       ;;(:div
        ;;(:pre "SELECT version();"))
