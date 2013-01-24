@@ -99,6 +99,8 @@ TODO: cleanup code."
        (:a :href "static/hello.txt" "hello"))
       (:div
        (:a :href "static/Basic.Introduction.To.Lisp.ppt" "Basic Introduction to Lisp ( ppt )"))
+      (:div
+       (:a :href "static/BITL.pdf" "Basic Introduction to Lisp ( pdf )"))
       ;;(:h3 "App Database")
       ;;(:div
        ;;(:pre "SELECT version();"))
