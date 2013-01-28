@@ -1,6 +1,3 @@
-(defpackage #:example
-  (:export #:app))
-
 (in-package #:example)
 
 ;; Utils
