@@ -18,7 +18,7 @@ TODO: cleanup code."
 	 (database (second (cl-ppcre:split "/" (second (cl-ppcre:split "@" url))))))
     (list database user password host)))
 
-(defun fuckyou (pprint "fuck you!"))
+(defun fuckyou () (pprint "fuck you!"))
 
 (fuckyou)
 
