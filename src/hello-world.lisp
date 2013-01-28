@@ -18,8 +18,13 @@ TODO: cleanup code."
 	 (database (second (cl-ppcre:split "/" (second (cl-ppcre:split "@" url))))))
     (list database user password host)))
 
-(defun app () #+:LOCAL-H "/home/ibm/heroku-cl-example"
-	#-:LOCAL-H "/app")
+(defun fuckyou (pprint "fuck you!"))
+
+(fuckyou)
+
+(defun app () #+LOCAL-H "/home/ibm/heroku-cl-example"
+	#-LOCAL-H "/app")
+
 
 (pprint (app))
 
