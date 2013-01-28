@@ -19,10 +19,15 @@ TODO: cleanup code."
     (list database user password host)))
 
 ;; Handlers
-(defvar app #+:LOCAL-H "/home/ibm/herouk-cl-example"
+(defparameter app #+:LOCAL-H "/home/ibm/herouk-cl-example"
 	#-:LOCAL-H "/app")
+
+(pprint app)
+
 (defmacro with-app (str)
   `(concatenate 'string ,app ,str))
+
+(pprint (with-app "/abc"))
 
 (push (hunchentoot:create-folder-dispatcher-and-handler "/static/" (with-app "/public/"))
       hunchentoot:*dispatch-table*)
