@@ -1,0 +1,11 @@
+;; test hunchentoot in local
+
+(setf *build-dir* "/home/ibm/heroku-cl-example")
+
+(pushnew :LOCAL-H *features*)
+
+(load "heroku-setup.lisp")
+
+(defvar *h-acceptor* (make-instance 'hunchentoot:easy-acceptor :port 8888))
+
+(hunchentoot:start *h-acceptor*)

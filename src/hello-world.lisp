@@ -1,4 +1,7 @@
-(in-package :example)
+(defpackage #:example
+  (:export #:app))
+
+(in-package #:example)
 
 ;; Utils
 (defun heroku-getenv (target)
@@ -19,22 +22,27 @@ TODO: cleanup code."
     (list database user password host)))
 
 ;; Handlers
-(push (hunchentoot:create-folder-dispatcher-and-handler "/static/" "/app/public/")
+(defvar app #+:LOCAL-H "/home/ibm/herouk-cl-example"
+	#-:LOCAL-H "/app")
+(defmacro with-app (str)
+  `(concatenate 'string ,app ,str))
+
+(push (hunchentoot:create-folder-dispatcher-and-handler "/static/" (with-app "/public/"))
       hunchentoot:*dispatch-table*)
 
-(push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/" "/app/public/cydia/")
+(push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/" (with-app "/public/cydia/"))
       hunchentoot:*dispatch-table*)
 
-(push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/tpime/v2.2.2/" "/app/public/cydia/tpime/v2.2.2/")
+(push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/tpime/v2.2.2/" (with-app "/public/cydia/tpime/v2.2.2/"))
       hunchentoot:*dispatch-table*)
 
-(push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/tpime/v2.3/" "/app/public/cydia/tpime/v2.3/")
+(push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/tpime/v2.3/" (with-app "/public/cydia/tpime/v2.3/"))
       hunchentoot:*dispatch-table*)
 
-(push (hunchentoot:create-static-file-dispatcher-and-handler "/cydia/Release" "/app/public/cydia/Release" "text/plain")
+(push (hunchentoot:create-static-file-dispatcher-and-handler "/cydia/Release" (with-app "/public/cydia/Release") "text/plain")
       hunchentoot:*dispatch-table*)
 
-(push (hunchentoot:create-static-file-dispatcher-and-handler "/cydia/Packages" "/app/public/cydia/Packages" "text/plain")
+(push (hunchentoot:create-static-file-dispatcher-and-handler "/cydia/Packages" (with-app "/public/cydia/Packages") "text/plain")
       hunchentoot:*dispatch-table*)
 
 
