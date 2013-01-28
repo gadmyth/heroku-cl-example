@@ -18,17 +18,17 @@ TODO: cleanup code."
 	 (database (second (cl-ppcre:split "/" (second (cl-ppcre:split "@" url))))))
     (list database user password host)))
 
-;; Handlers
-(defparameter app #+:LOCAL-H "/home/ibm/herouk-cl-example"
+(defun app () #+:LOCAL-H "/home/ibm/heroku-cl-example"
 	#-:LOCAL-H "/app")
 
-(pprint app)
+(pprint (app))
 
 (defmacro with-app (str)
-  `(concatenate 'string ,app ,str))
+  `(concatenate 'string ,(app) ,str))
 
-(pprint (with-app "/abc"))
+(pprint (macroexpand-1 '(with-app "/abc")))
 
+;; Handlers
 (push (hunchentoot:create-folder-dispatcher-and-handler "/static/" (with-app "/public/"))
       hunchentoot:*dispatch-table*)
 
