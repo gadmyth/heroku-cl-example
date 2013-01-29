@@ -50,6 +50,7 @@ TODO: cleanup code."
     (:html
      (:head
        (:link :rel "shortcut icon" :href "static/favicon.ico" :type "image/x-icon")
+       (:link :rel "stylesheet" :type "text/css" :href "static/default.css")
        (:title "Cydia Source"))
      (:body
       (:h6 (format s "build-dir: ~A" (eval (find-symbol "*BUILD-DIR*" (find-package :cl-user)))))
