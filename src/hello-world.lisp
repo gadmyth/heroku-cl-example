@@ -105,6 +105,8 @@ TODO: cleanup code."
       (:div
        (:a :href "static/lisp-glossy.jpg" (:img :src "static/lisp-glossy.jpg" :width 100)))
       (:div
+       (:a :href "ecl-shell-example.txt" "ecl shell example"))
+      (:div
        (:a :href "static/hello.txt" "hello"))
       (:div
        (:a :href "static/Basic.Introduction.To.Lisp.ppt" "Basic Introduction to Lisp ( ppt )"))

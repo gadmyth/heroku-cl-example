@@ -1,0 +1,19 @@
+#!/usr/local/bin/ecl -shell
+
+(setq s (ext:run-program "ls" nil :input nil :output :STREAM :error nil))
+(format t "stream ~A~%" s)
+(setq files (loop for x = (read s nil nil)
+    while x
+    collect x))
+(format t "files: ~A~%" files)
+(format t "now package is ~A~%" *package*)
+(format t "building....~%")
+
+(uffi:load-foreign-library "/usr/lib/i386-linux-gnu/libm.so")
+(uffi:def-function ("sin" c-sin) ((arg :double))
+    :returning :double)
+
+(format t "~A~%" (sin 0.5))
+
+(require 'asdf)
+
