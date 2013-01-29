@@ -25,7 +25,7 @@ TODO: cleanup code."
 
 
 (defmacro with-app (str)
-  `(concatenate 'string "/app" ,str))
+  `(concatenate 'string "/home/ibm/heroku-cl-example" ,str))
 
 ;; Handlers
 (push (hunchentoot:create-folder-dispatcher-and-handler "/static/" (with-app "/public/"))
@@ -94,20 +94,25 @@ TODO: cleanup code."
     (:html
      (:head
        (:link :rel "shortcut icon" :href "static/favicon.ico" :type "image/x-icon")
+       (:link :rel "stylesheet" :type "text/css" :href "static/default.css")
        (:title "Workspace of Gadmyth"))
      (:body
-      (:h1 "Welcome to my workspace!")
+      (:h1 :class "space_title" "Welcome to gadmyth's workspace!")
+      (:a :href "static/lisp-glossy.jpg" (:img :src "static/lisp-glossy.jpg" :width 100))
       (:h3 "Environment of workspace：")
       (:ul
        (:li (format s "~A ~A" (lisp-implementation-type) (lisp-implementation-version)))
        (:li (format s "Hunchentoot ~A" hunchentoot::*hunchentoot-version*))
        (:li (format s "CL-WHO")))
+      (:p)
       (:div
-       (:a :href "static/lisp-glossy.jpg" (:img :src "static/lisp-glossy.jpg" :width 100)))
-      (:div
-       (:a :href "static/ecl-shell-example.txt" "ecl shell example"))
+       (:a :href "/cydia" "TouchPal Input Method of iOS Cydia resoure"))
+      (:p)
       (:div
        (:a :href "static/hello.txt" "hello"))
+      (:div
+       (:a :href "static/ecl-shell-example.txt" "ecl shell example"))
+      (:p)
       (:div
        (:a :href "static/Basic.Introduction.To.Lisp.ppt" "Basic Introduction to Lisp ( ppt )"))
       (:div

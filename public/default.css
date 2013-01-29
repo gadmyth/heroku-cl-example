@@ -1,0 +1,9 @@
+body {
+    font-family: Helvetica,FreeSans,"Liberation Sans",Helmet,Arial,sans-serif;
+    background-color: #efefef;
+}
+
+.space_title {
+    color: Orange;
+    text-align: center;
+}
