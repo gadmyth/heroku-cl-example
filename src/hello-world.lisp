@@ -21,11 +21,9 @@ TODO: cleanup code."
 
 (pprint *features*)
 
-;;(defun app-root () #+LOCAL-H "/home/ibm/heroku-cl-example" #-LOCAL-H "/app")
-
 
 (defmacro with-app (str)
-  `(concatenate 'string "/home/ibm/heroku-cl-example" ,str))
+  `(concatenate 'string "/app" ,str))
 
 ;; Handlers
 (push (hunchentoot:create-folder-dispatcher-and-handler "/static/" (with-app "/public/"))
