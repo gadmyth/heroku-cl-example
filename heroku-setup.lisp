@@ -7,7 +7,7 @@
 (print ">>> Building system....")
 
 (load (make-pathname :defaults *build-dir* :name "md5-1.8.5/md5" :type "asd"))
-(load (make-pathname :defaults *build-dir* :defaults "example.asd"))
+(load (make-pathname :defaults *build-dir* :name "example" :type "asd"))
 
 (ql:quickload :md5)
 (ql:quickload :example)
