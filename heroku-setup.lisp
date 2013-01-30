@@ -3,7 +3,6 @@
 (export '*build-dir*)
 (print "build-dir:")
 (print *build-dir*)
-(print *features*)
 
 (print ">>> Building system....")
 
