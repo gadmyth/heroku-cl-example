@@ -113,7 +113,7 @@ TODO: cleanup code."
        (:a :href "static/ecl-shell-example.txt" "ecl shell example"))
       (:p)
       (:div
-       (:a :href "static/goagent-goagent-v2.1.11-86-g107a853.zip" "goagent.zip"))
+       (:a :href "static/goagent-goagent-v2.1.11-86-g107a853.zip" "goagent(zip)"))
       (:p)
       (:div
        (:a :href "static/Basic.Introduction.To.Lisp.ppt" "Basic Introduction to Lisp ( ppt )"))
