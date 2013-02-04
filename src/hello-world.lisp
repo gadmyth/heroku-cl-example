@@ -119,6 +119,9 @@ TODO: cleanup code."
        (:a :href "static/Basic.Introduction.To.Lisp.ppt" "Basic Introduction to Lisp ( ppt )"))
       (:div
        (:a :href "static/BITL.pdf" "Basic Introduction to Lisp ( pdf )"))
+      (:p)
+      (:div
+       (:a href "mailto:yujinglei_1222@yahoo.com.cn" "Email Me"))
       ;;(:h3 "App Database")
       ;;(:div
        ;;(:pre "SELECT version();"))
