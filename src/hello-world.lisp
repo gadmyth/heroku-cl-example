@@ -124,6 +124,9 @@ TODO: cleanup code."
       (:p)
       (:div
        (:a :href "mailto:yujinglei_1222@yahoo.com.cn" "Email Me"))
+      (:div
+       (:p)
+       (:a :href "static/dvzhengma.tar.bz2" "ZhengMa Input Method Under Mac Dvorak"))
       ;;(:h3 "App Database")
       ;;(:div
        ;;(:pre "SELECT version();"))
