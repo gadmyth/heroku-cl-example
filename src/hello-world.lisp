@@ -124,6 +124,7 @@ TODO: cleanup code."
       (:div
        (:p)
        (:a :href "static/dvzhengma.tar.bz2" "ZhengMa Input Method Dvorak Under Mac")
+       (:br)
        (:a :href "static/dv.zhengma.tar.bz2" "ZhengMa Input Method Dvorak Under Linux Yong"))
       (:div
        (:p)
