@@ -121,12 +121,13 @@ TODO: cleanup code."
        (:a :href "static/Basic.Introduction.To.Lisp.ppt" "Basic Introduction to Lisp ( ppt )"))
       (:div
        (:a :href "static/BITL.pdf" "Basic Introduction to Lisp ( pdf )"))
-      (:p)
-      (:div
-       (:a :href "mailto:yujinglei_1222@yahoo.com.cn" "Email Me"))
       (:div
        (:p)
-       (:a :href "static/dvzhengma.tar.bz2" "ZhengMa Input Method Under Mac Dvorak"))
+       (:a :href "static/dvzhengma.tar.bz2" "ZhengMa Input Method Dvorak Under Mac")
+       (:a :href "static/dv.zhengma.tar.bz2" "ZhengMa Input Method Dvorak Under Linux Yong"))
+      (:div
+       (:p)
+       (:a :href "mailto:yujinglei_1222@yahoo.com.cn" "Email Me"))
       ;;(:h3 "App Database")
       ;;(:div
        ;;(:pre "SELECT version();"))
