@@ -107,8 +107,7 @@ TODO: cleanup code."
        (:li (format s "CL-WHO")))
       (:p)
       (:div
-       (:img :src "static/cydia.png")
-       (:a :href "/cydia" "TouchPal Input Method of iOS Cydia resoure"))
+       (:a :href "/cydia" "TouchPal Input Method of iOS Cydia resoure" (:img :src "static/cydia.png" :width 50 :height 50)))
       (:p)
       (:div
        (:a :href "static/hello.txt" "hello"))
