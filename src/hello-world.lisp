@@ -99,7 +99,7 @@ TODO: cleanup code."
        (:title "Workspace of Gadmyth"))
      (:body
       (:h1 :class "space_title" "Welcome to gadmyth's workspace!")
-      (:a :href "static/lisp-glossy.jpg" (:img :src "static/lisp-glossy.jpg" :width 100))
+      (:a :href "static/lisp-glossy.jpg" (:img :src "static/head.jpeg" :width 100))
       (:h3 "Environment of workspace：")
       (:ul
        (:li (format s "~A ~A" (lisp-implementation-type) (lisp-implementation-version)))
