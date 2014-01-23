@@ -1,8 +1,8 @@
 Origin: GADMYTH
 Label: GADMYTH
 Suite: stable
-Version: 3.2.160377
+Version: 3.2.160867
 Codename: touchpal
 Architectures: iphoneos-arm
 Components: main
-Description: Distribution of TouchPal InputMethod for iOS (only for iOS7, iPhone5)
+Description: Distribution of TouchPal InputMethod for iOS (支持iPhone5S, iPhone5, iOS7)

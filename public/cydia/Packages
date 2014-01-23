@@ -4,10 +4,10 @@ Architecture: iphoneos-arm
 Maintainer: CooTek
 Depends: mobilesubstrate (>=0.9.3005-1), firmware (>= 4.0)
 Filename: tpime/v3.2.1/TouchPalIME.deb
-Size: 12414762
-MD5sum: c066ffd0a19d2cebbfd5258e60c85ab2d
-SHA1: e673914a115d111ce130ebb36968f6d69da932bc
-SHA256:69e53e1a26a3fba539c07260a8136d682db404022f4ffa83d4ffce5f7378df4f
+Size: 15226630
+MD5sum: 38011b4372154513c0cd5281e7937a5d
+SHA1: 07118da760d5b0b9ddd94c6763dbabd90ccccdc2
+SHA256: 457b3c1d7b5ba9be9b7f35e5ab84dc4aeeae55e788b06b20cf0f07536218135b
 Section: [触宝输入法]
 Homepage: http://www.chubao.cn/cootek.php?id=cootekindex
 Description: 触宝输入法
