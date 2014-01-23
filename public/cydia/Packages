@@ -1,5 +1,5 @@
 Package: com.cootek.touchpalinputmethod
-Version: 3.2.160377
+Version: 3.2.160939
 Architecture: iphoneos-arm
 Maintainer: CooTek
 Depends: mobilesubstrate (>=0.9.3005-1), firmware (>= 4.0)
