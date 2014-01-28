@@ -1,8 +1,0 @@
-Origin: GADMYTH
-Label: GADMYTH
-Suite: stable
-Version: 2.3.23240
-Codename: touchpal
-Architectures: iphoneos-arm
-Components: main
-Description: Distribution of TouchPal InputMethod for iOS

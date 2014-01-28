@@ -32,10 +32,7 @@ TODO: cleanup code."
 (push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/" (with-app "/public/cydia/"))
       hunchentoot:*dispatch-table*)
 
-(push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/tpime/v2.2.2/" (with-app "/public/cydia/tpime/v2.2.2/"))
-      hunchentoot:*dispatch-table*)
-
-(push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/tpime/v2.3/" (with-app "/public/cydia/tpime/v2.3/"))
+(push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/tpime/v3.2.1/" (with-app "/public/cydia/tpime/v3.2.1/"))
       hunchentoot:*dispatch-table*)
 
 (push (hunchentoot:create-static-file-dispatcher-and-handler "/cydia/Release" (with-app "/public/cydia/Release") "text/plain")
@@ -45,7 +42,7 @@ TODO: cleanup code."
       hunchentoot:*dispatch-table*)
 
 
-(hunchentoot:define-easy-handler (cydia-source :uri "/cydia") ()
+(hunchentoot:define-easy-handler (cydia-source :uri "/cydia/") ()
   (cl-who:with-html-output-to-string (s)
     (:html
      (:head
@@ -59,11 +56,8 @@ TODO: cleanup code."
       (:a :href "https://devcenter.heroku.com/articles/read-only-filesystem" "you can load file to #p\"./tmp\"")
       (:div
        	(:h5 (format s "The followings are app into hacked iphones:"))
-	(:a :href "cydia/tpime/v2.2.2/TouchPalIME.deb" "TouchPal IME for IOS 4,5 v2.2.2, release, 2012.5.30")
+	(:a :href "cydia/tpime/v3.2.1/TouchPalIME.deb" "TouchPal IME for IOS 6,7 v3.2.2, release, 2014.1.28"))
 	(:p)
-	(:a :href "cydia/tpime/v2.3/TouchPalIME.deb" "TouchPal IME for IOS 4,5 v2.3, release, 2012.6.20")
-	(:p)
-	(:a :href "cydia/tpime/v3.0/TouchPalIME.deb" "TouchPal IME for IOS 5,6 v3.0, release, 2013.2.7"))
       ))))
 
 (defvar *register-table* (make-hash-table :test #'equal))
