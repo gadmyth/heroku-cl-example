@@ -42,7 +42,7 @@ TODO: cleanup code."
       hunchentoot:*dispatch-table*)
 
 
-(hunchentoot:define-easy-handler (cydia-source :uri "/cydia/") ()
+(hunchentoot:define-easy-handler (cydia-source :uri "/cydia") ()
   (cl-who:with-html-output-to-string (s)
     (:html
      (:head
@@ -51,7 +51,7 @@ TODO: cleanup code."
        (:title "Cydia Source"))
      (:body
       (:h6 (format s "build-dir: ~A" (eval (find-symbol "*BUILD-DIR*" (find-package :cl-user)))))
-      (:h6 (format s "~A" (md5:md5sum-file #p"./public/cydia/tpime/v2.3/TouchPalIME.deb")))
+      (:h6 (format s "~A" (md5:md5sum-file #p"./public/cydia/tpime/v3.2.1/TouchPalIME.deb")))
       (:h6 (format s "~A" (md5:md5sum-sequence "1234567890")))
       (:a :href "https://devcenter.heroku.com/articles/read-only-filesystem" "you can load file to #p\"./tmp\"")
       (:div
