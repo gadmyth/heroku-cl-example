@@ -32,7 +32,7 @@ TODO: cleanup code."
 (push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/" (with-app "/public/cydia/"))
       hunchentoot:*dispatch-table*)
 
-(push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/tpime/v3.2.1/" (with-app "/public/cydia/tpime/v3.2.1/"))
+(push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/tpime/v3.2.2/" (with-app "/public/cydia/tpime/v3.2.2/"))
       hunchentoot:*dispatch-table*)
 
 (push (hunchentoot:create-static-file-dispatcher-and-handler "/cydia/Release" (with-app "/public/cydia/Release") "text/plain")
@@ -51,12 +51,12 @@ TODO: cleanup code."
        (:title "Cydia Source"))
      (:body
       (:h6 (format s "build-dir: ~A" (eval (find-symbol "*BUILD-DIR*" (find-package :cl-user)))))
-      (:h6 (format s "~A" (md5:md5sum-file #p"./public/cydia/tpime/v3.2.1/TouchPalIME.deb")))
+      (:h6 (format s "~A" (md5:md5sum-file #p"./public/cydia/tpime/v3.2.2/TouchPalIME.deb")))
       (:h6 (format s "~A" (md5:md5sum-sequence "1234567890")))
       (:a :href "https://devcenter.heroku.com/articles/read-only-filesystem" "you can load file to #p\"./tmp\"")
       (:div
        	(:h5 (format s "The followings are app into hacked iphones:"))
-	(:a :href "cydia/tpime/v3.2.1/TouchPalIME.deb" "TouchPal IME for IOS 6,7 v3.2.2, release, 2014.1.28"))
+	(:a :href "cydia/tpime/v3.2.2/TouchPalIME.deb" "TouchPal IME for IOS 6,7 v3.2.2, release, 2014.1.28"))
 	(:p)
       ))))
 

@@ -3,7 +3,7 @@ Version: 3.2.261236
 Architecture: iphoneos-arm
 Maintainer: CooTek
 Depends: mobilesubstrate (>=0.9.3005-1), firmware (>= 6.0)
-Filename: tpime/v3.2.1/TouchPalIME.deb
+Filename: tpime/v3.2.2/TouchPalIME.deb
 Size: 15470840
 MD5sum: 392f94b9cac57903706c292a8101a029
 SHA1: 92f04c616c90c48cb8e9853ed53b014cb0868764
