@@ -1,13 +1,13 @@
 Package: com.cootek.touchpalinputmethod
-Version: 3.2.261456
+Version: 3.2.261598
 Architecture: iphoneos-arm
 Maintainer: CooTek
 Depends: mobilesubstrate (>=0.9.3005-1), firmware (>= 6.0)
 Filename: TouchPalIME.deb
-Size: 11299458
-MD5sum: 964d5fa8fbda648e6be5def4fa0d4ec4
-SHA1: dfca3c9cd32ffd7890db2b010df133459c3a0d7b
-SHA256: 664bb531157c48bf8451d314077bacba0aeb848e267b5fa70dfb637b865d004a
+Size: 11313942
+MD5sum: 1376016761d129c833c76945661bc114
+SHA1: 0913243c2790cb5d6508d7b01e72ec06f0e7102c
+SHA256: e6dc40b31509819c7225415ff132b7c4ff8b0fee4e0f87e07b694ddd1467d862
 Section: [触宝输入法]
 Homepage: http://www.chubao.cn/cootek.php?id=cootekindex
 Description: 触宝输入法
