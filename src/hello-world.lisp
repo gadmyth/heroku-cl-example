@@ -19,8 +19,7 @@ TODO: cleanup code."
     (list database user password host)))
 
 
-(pprint *features*)
-(pprint cl-user:LOCAL-DEBUG)
+;(pprint *features*)
 
 
 (defmacro with-app (str)
