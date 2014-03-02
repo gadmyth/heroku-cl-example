@@ -1,6 +1,10 @@
 ;; test hunchentoot in local
 
-(setf *build-dir* "/home/ibm/heroku-cl-example")
+(in-package #:cl-user)
+
+(defvar *build-dir* "/data/heroku-cl-example/")
+(defvar	LOCAL-DEBUG t)
+(export 'LOCAL-DEBUG)
 
 (pushnew :LOCAL-H *features*)
 

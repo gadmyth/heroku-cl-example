@@ -20,25 +20,28 @@ TODO: cleanup code."
 
 
 (pprint *features*)
+(pprint cl-user:LOCAL-DEBUG)
 
 
 (defmacro with-app (str)
-  `(concatenate 'string "/app" ,str))
+  `(if (find-symbol "LOCAL-DEBUG" (find-package :cl-user))
+	   ,str
+	   (concatenate 'string "/app/" ,str)))
 
 ;; Handlers
-(push (hunchentoot:create-folder-dispatcher-and-handler "/static/" (with-app "/public/"))
+(push (hunchentoot:create-folder-dispatcher-and-handler "/static/" (with-app "public/"))
       hunchentoot:*dispatch-table*)
 
-(push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/" (with-app "/public/cydia/"))
+(push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/" (with-app "public/cydia/"))
       hunchentoot:*dispatch-table*)
 
-(push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/tpime/v3.2.2/" (with-app "/public/cydia/tpime/v3.2.2/"))
+(push (hunchentoot:create-folder-dispatcher-and-handler "/cydia/tpime/v3.2.2/" (with-app "public/cydia/tpime/v3.2.2/"))
       hunchentoot:*dispatch-table*)
 
-(push (hunchentoot:create-static-file-dispatcher-and-handler "/cydia/Release" (with-app "/public/cydia/Release") "text/plain")
+(push (hunchentoot:create-static-file-dispatcher-and-handler "/cydia/Release" (with-app "public/cydia/Release") "text/plain")
       hunchentoot:*dispatch-table*)
 
-(push (hunchentoot:create-static-file-dispatcher-and-handler "/cydia/Packages" (with-app "/public/cydia/Packages") "text/plain")
+(push (hunchentoot:create-static-file-dispatcher-and-handler "/cydia/Packages" (with-app "public/cydia/Packages") "text/plain")
       hunchentoot:*dispatch-table*)
 
 
