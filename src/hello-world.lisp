@@ -24,7 +24,7 @@ TODO: cleanup code."
 
 
 (defmacro with-app (str)
-  `(if (find-symbol "LOCAL-DEBUG" (find-package :cl-user))
+  `(if (eval (find-symbol "LOCAL-DEBUG" (find-package :cl-user)))
 	   ,str
 	   (concatenate 'string "/app/" ,str)))
 
