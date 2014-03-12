@@ -20,7 +20,7 @@ TODO: cleanup code."
 
 
 (pprint *features*)
-(pprint cl-user:LOCAL-DEBUG)
+;;(pprint cl-user:LOCAL-DEBUG)
 
 
 (defmacro with-app (str)
