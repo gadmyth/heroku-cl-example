@@ -27,6 +27,7 @@ TODO: cleanup code."
   #-local-h
   (concatenate 'string "/app/" str))
 
+
 ;; Handlers
 (push (hunchentoot:create-folder-dispatcher-and-handler "/static/" (with-app "public/"))
       hunchentoot:*dispatch-table*)
