@@ -2,9 +2,7 @@
 
 (in-package #:cl-user)
 
-(defvar *build-dir* *default-pathname-defaults*)
-(defvar	LOCAL-DEBUG t)
-(export 'LOCAL-DEBUG)
+(defvar *build-dir* "/data/heroku-cl-example/")
 
 (pushnew :LOCAL-H *features*)
 

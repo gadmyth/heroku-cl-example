@@ -19,14 +19,14 @@ TODO: cleanup code."
     (list database user password host)))
 
 
-(pprint *features*)
-;;(pprint cl-user:LOCAL-DEBUG)
-
+;(pprint *features*)
 
 (defmacro with-app (str)
-  `(if (eval (find-symbol "LOCAL-DEBUG" (find-package :cl-user)))
-	   ,str
-	   (concatenate 'string "/app/" ,str)))
+  #+local-h 
+  str
+  #-local-h
+  (concatenate 'string "/app/" str))
+
 
 ;; Handlers
 (push (hunchentoot:create-folder-dispatcher-and-handler "/static/" (with-app "public/"))
@@ -95,7 +95,7 @@ TODO: cleanup code."
        (:link :rel "stylesheet" :type "text/css" :href "static/default.css")
        (:title "Workspace of Gadmyth"))
      (:body
-      (:h1 :class "space_title" "Welcome to gadmyth's workspace!")
+      (:h1 :class "space_title" "Welcome to Gadmyth's workspace!")
       (:a :href "static/lisp-glossy.jpg" (:img :src "static/head.jpeg" :width 100))
       (:h3 "Environment of workspace：")
       (:ul
@@ -125,7 +125,7 @@ TODO: cleanup code."
        (:a :href "static/dv.zhengma.tar.bz2" "ZhengMa Input Method Dvorak Under Linux Yong"))
       (:div
        (:p)
-       (:a :href "mailto:yujinglei_1222@yahoo.com.cn" "Email Me"))
+       (:a :href "mailto:gadmyth@gmail.com" "Email Me"))
       ;;(:h3 "App Database")
       ;;(:div
        ;;(:pre "SELECT version();"))
